@@ -3,6 +3,10 @@ include_once('../sys/config.php');
 
 if (isset($_POST['submit']) && !empty($_POST['user']) && !empty($_POST['pass'])) {
 	include_once('../header.php');
+	//在使用SQL注入的时候，可以使用以下方式实现SQL注入
+	//$name的输入为以下内容
+	//1 ' or 1=1 or ' 
+	//即可实现不用密码也可以进入的方法
 	$name = $_POST['user'];
 	$pass = $_POST['pass'];
 
